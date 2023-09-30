@@ -113,3 +113,6 @@ a {
 .btn:active {
   color: var(--clr-accent);
 }
+.btn:disabled {
+  opacity: 0.6;
+}

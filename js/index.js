@@ -5,6 +5,11 @@ const senderMessage = document.getElementById('senderMessage');
 const lightThemeButton = document.getElementById('light');
 const projectImage = document.querySelectorAll('.project__image');
 const projectLinks = document.querySelectorAll('.project__links');
+const formBtn = document.querySelector('.btn-form');
+
+let readyName = false;
+let readyEmail = false;
+let readyMessage = false;
 
 document.addEventListener('DOMContentLoaded', () => {
   projectImage.forEach((image, i) => {
@@ -21,12 +26,53 @@ document.addEventListener('DOMContentLoaded', () => {
       projectLinks[i].classList.remove('display-project-links');
     });
   });
+
+  senderName.addEventListener('keyup', (e) => {
+    let currentElement = e.target;
+    let elementValue = e.target.value;
+    readyName = validateInputs(elementValue, currentElement);
+  });
+  senderEmail.addEventListener('keyup', (e) => {
+    let currentElement = e.target;
+    let elementValue = e.target.value;
+    readyEmail = validateInputs(elementValue, currentElement);
+  });
+  senderMessage.addEventListener('keyup', (e) => {
+    let currentElement = e.target;
+    let elementValue = e.target.value;
+    readyMessage = validateInputs(elementValue, currentElement);
+  });
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    if (readyName && readyEmail && readyMessage) {
+      console.log(
+        senderName.value + ' ' + senderEmail.value + ' ' + senderMessage.value
+      );
+    }
   });
-  validateInput();
+  formBtn.addEventListener('click', (e) => {});
 });
 
+function validateInputs(fieldValue, element) {
+  let isReady = false;
+  if (fieldValue === '') {
+    isReady = false;
+    setError(element, `${element.name} is required`);
+    return isReady;
+  } else if (!isValidEmail(fieldValue) && element.id === 'senderEmail') {
+    isReady = false;
+    setError(element, 'Sorry,invalid format here');
+    return isReady;
+  } else if (isWhiteSpace(fieldValue)) {
+    isReady = false;
+    setError(element, 'No white space allowed');
+    return isReady;
+  } else {
+    setSuccess(element);
+    isReady = true;
+    return isReady;
+  }
+}
 const setError = (element, message) => {
   const formGroup = element.parentElement;
   const errorDisplay = formGroup.querySelector('.error');
@@ -44,7 +90,6 @@ const setSuccess = (element) => {
   element.classList.add('success');
   element.classList.remove('error-field');
 };
-
 const isValidEmail = (email) => {
   const re =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -54,47 +99,3 @@ const isWhiteSpace = (s) => {
   const re = /^\s+$/;
   return re.test(String(s));
 };
-function validateInput() {
-  //   const senderNameValue = senderName.value.trim();
-  //   const senderEmailValue = senderEmail.value.trim();
-  //   const senderMessageValue = senderMessage.value.trim();
-
-  senderName.addEventListener('keyup', (e) => {
-    const senderNameValue = e.target.value;
-    if (senderNameValue === '') {
-      setError(senderName, 'Name is required');
-    } else if (isWhiteSpace(senderNameValue)) {
-      setError(senderName, 'No white space allowed');
-    } else {
-      setSuccess(senderName);
-    }
-  });
-
-  senderEmail.addEventListener('keyup', (e) => {
-    const senderEmailValue = e.target.value;
-    if (senderEmailValue === '') {
-      setError(senderEmail, 'Email is required');
-    } else if (!isValidEmail(senderEmailValue)) {
-      setError(senderEmail, 'Sorry,invalid format here');
-    } else if (isWhiteSpace(senderEmailValue)) {
-      setError(senderEmail, 'No white space allowed');
-    } else {
-      setSuccess(senderEmail);
-    }
-  });
-
-  senderMessage.addEventListener('keyup', (e) => {
-    const senderMessageValue = e.target.value;
-    if (senderMessageValue === '') {
-      setError(senderMessage, 'Message is required');
-    } else if (isWhiteSpace(senderMessageValue)) {
-      setError(senderMessage, 'No white space allowed');
-    } else {
-      setSuccess(senderMessage);
-    }
-  });
-}
-
-// lightThemeButton.addEventListener('click', () => {
-//   document.body.classList.toggle('light-theme');
-// });
