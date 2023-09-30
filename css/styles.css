@@ -1,0 +1,378 @@
+/******************** HEADER *****************************/
+.header {
+  --auto-flex-directions: column;
+  --align-items: center;
+  --auto-flex-gap: 2.5rem;
+  margin: var(--margin-top-bottom) 0;
+}
+.primaryNav {
+  --auto-flex-gap: 2.5rem;
+  --auto-flex-directions: row;
+}
+.logo {
+  font-size: var(--fs-logo);
+  text-shadow: 1px 0px 3px rgba(76, 225, 158, 0.2);
+  letter-spacing: 1px;
+}
+.logo span {
+  color: var(--clr-accent);
+}
+.icon {
+  width: 25px;
+  height: 25px;
+}
+.icon:hover {
+  --accent: var(--clr-accent);
+}
+.iconContainer:focus {
+  outline: 2px solid rgb(76, 225, 158);
+}
+/******************* HERO ****************************/
+.hero {
+  --auto-flex-directions: column-reverse;
+  --align-items: center;
+}
+.heroImage__box {
+  transform: translateY(-8rem);
+}
+.hero__left .hero__name {
+  border-bottom: 3px solid var(--clr-accent);
+}
+.hero__left .rings {
+  position: absolute;
+  width: 500px;
+  top: 20%;
+  left: -25%;
+  z-index: 1000;
+}
+.heroImage__box {
+  max-width: 60%;
+  margin-inline: auto;
+  filter: grayscale(100%);
+}
+.heroImage__box .circle {
+  position: absolute;
+  right: -50%;
+  bottom: 5%;
+  width: 40%;
+}
+
+/*********** SKILLS ********************/
+.my-skills {
+  position: relative;
+  margin-top: 4rem;
+  --devider-space: 8rem;
+}
+.skills {
+  --auto-flex-directions: column;
+}
+.skills .rings {
+  position: absolute;
+  right: -50%;
+  bottom: 1%;
+  z-index: -10;
+}
+/****************** MY WORK *************************/
+.my-work {
+  --justify-content: space-between;
+  margin: 4rem 0 calc(var(--margin-top-bottom) * 4) 0;
+  --vertical-spacer-size: 2.5;
+}
+.projects {
+  --auto-flex-directions: column;
+}
+
+.project {
+  --auto-flex-directions: column;
+  --justify-content: flex-start;
+  text-align: left;
+  --vertical-spacer-size: 1;
+  margin-bottom: calc(var(--margin-top-bottom) * 2);
+}
+.project__description {
+  margin-bottom: calc(var(--margin-top-bottom) * 0.5);
+}
+.project__links {
+  margin-top: 0 !important;
+  margin-bottom: 4rem;
+  --auto-flex-directions: row;
+  --auto-flex-gap: 2.5rem;
+}
+
+/******************* CONTACT ***************************/
+.contact {
+  background-color: var(--bg-contact);
+  padding: 4rem 0 0 0;
+  position: relative;
+  --auto-flex-directions: column;
+  --align-items: center;
+}
+
+.contactForm {
+  --auto-flex-directions: column;
+  --justify-content: flex-end;
+  margin: calc(var(--margin-top-bottom) * 2.8) 0;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+.contactForm .form-group {
+  --auto-flex-directions: column;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+.form-group .error {
+  font-size: var(--fs-body);
+  color: var(--clr-invalid);
+  display: inline-flex;
+  margin-left: auto;
+}
+.form-control {
+  width: 100%;
+  padding: 3rem 2rem;
+  border: 0;
+  background: transparent;
+  border-bottom: 2px solid #787878;
+  outline: 0;
+  color: var(--clr-text);
+  font-size: var(--fs-body);
+  text-transform: uppercase;
+}
+
+input[name='message'] {
+  padding-bottom: calc(var(--margin-top-bottom) * 5);
+}
+.form-control::placeholder {
+  text-transform: uppercase;
+}
+.form-control.success {
+  border-bottom: var(--border-bottom-accent);
+}
+.form-control.error-field {
+  border-bottom: 3px solid var(--clr-invalid);
+}
+
+.btn-form {
+  background: transparent;
+  border: 0;
+  border-bottom: var(--border-bottom-accent);
+  font: inherit;
+  align-self: flex-end;
+}
+.contact__left .rings {
+  position: absolute;
+  bottom: 10%;
+  left: -20%;
+}
+/***************** FOOTER *****************************/
+.footer {
+  background-color: var(--bg-contact);
+  --justify-content: center;
+  --auto-flex-directions: column;
+  --align-items: center;
+  --auto-flex-gap: 2rem;
+}
+.footer .primaryNav {
+  margin-bottom: calc(var(--margin-top-bottom) * 3);
+}
+
+/***************** MEDIA QUIRIES TABLET **********************/
+/* ***************** */
+@media screen and (min-width: 768px) {
+  .header {
+    --auto-flex-directions: row;
+    --justify-content: space-between;
+    --auto-flex-gap: 2.5rem;
+    margin: var(--margin-top-bottom) 0;
+  }
+  /****************** HERO ******************/
+  .hero {
+    --align-items: flex-start;
+  }
+  .hero__wrapper {
+    margin: calc(var(--margin-top-bottom) * 4) 0;
+  }
+  .hero__left {
+    position: relative;
+    text-align: left;
+    width: 75%;
+  }
+  .hero__left .rings {
+    left: -30%;
+    top: -20%;
+  }
+  .heroImage__box {
+    transform: translateY(0);
+    max-width: 550px;
+    position: absolute;
+    top: 0;
+    left: 74%;
+    z-index: -100;
+    min-height: 500px;
+  }
+  .heroImage__box .circle {
+    width: 15rem;
+    right: -10%;
+    bottom: 0;
+  }
+  .heroImage__box .my-image {
+    max-height: 600px;
+  }
+  /****************** SKILLS ******************/
+  .skills {
+    --auto-flex-directions: row;
+    --align-items: center;
+    --auto-flex-wrap: wrap;
+
+    text-align: left;
+  }
+  .skill {
+    flex: 0 1 50%;
+    margin-bottom: calc(var(--margin-top-bottom) * 1.5);
+  }
+  .skills .rings {
+    bottom: 5%;
+    right: -30%;
+  }
+
+  /****************** MY WORK ******************/
+  .my-work {
+    margin-top: calc(var(--margin-top-bottom) * 4);
+  }
+  .projects {
+    --auto-flex-directions: row;
+    --auto-flex-wrap: wrap;
+    --auto-flex-gap: 2rem;
+  }
+
+  .project {
+    flex: 1 1 40%;
+    --auto-flex-gap: 0.8rem;
+  }
+
+  /****************** CONTACT ******************/
+  .contact {
+    --devider-space: 6rem;
+  }
+  .contactForm {
+    width: 50%;
+    margin-inline: auto;
+  }
+
+  .contact .rings {
+    top: 70%;
+    left: -20%;
+  }
+
+  /****************** FOOTER ******************/
+  .footer {
+    --justify-content: space-between;
+    --auto-flex-directions: row;
+    --align-items: center;
+    padding-bottom: 4rem;
+  }
+  .footer .primaryNav {
+    margin: 0;
+  }
+}
+
+/* ***************** */
+/* ***************** */
+/* ***************** */
+
+/******************* MEDIA QUERIES DESKTOP  *************************/
+@media screen and (min-width: 1440px) {
+  /****************** HERO ******************/
+  .hero__wrapper {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 16rem;
+  }
+  .hero__left {
+    grid-column: 1 / 8;
+    grid-row: 1 / -1;
+    --vertical-spacer-size: 1;
+  }
+  .hero__left .rings {
+    top: 2%;
+  }
+  .heroImage__box {
+    left: 60%;
+  }
+  .heroImage__box .my-image {
+    width: 400px;
+    height: 600px;
+  }
+
+  .heroImage__box .circle {
+    width: 15rem;
+    right: 80%;
+    bottom: 10%;
+  }
+  /****************** SKILLS ******************/
+  .skilss {
+    --vertical-spacer-size: 3rem;
+  }
+  .skill {
+    flex: 1 1 30%;
+  }
+  .skills .rings {
+    bottom: 10%;
+    right: -20%;
+  }
+
+  /****************** MY WORK ******************/
+  .projects {
+    --auto-flex-gap: 3rem;
+  }
+  .project {
+    position: relative;
+  }
+  .project__links {
+    display: none;
+  }
+  .display-project-links {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-55%, -90%);
+    display: flex;
+    flex-direction: column;
+  }
+  .project__image {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .shadowed-project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    background-color: var(--bg-body);
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+  }
+
+  /****************** CONTACT ******************/
+  .contact {
+    --auto-flex-directions: row;
+    --align-items: flex-start;
+    --justify-content: space-between;
+  }
+  .contact__left {
+    position: relative;
+  }
+  .contactForm {
+    margin: 0;
+  }
+  .contact .container {
+    text-align: left;
+  }
+  .contact__left .rings {
+    top: 150%;
+    left: -20%;
+  }
+}

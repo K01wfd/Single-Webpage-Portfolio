@@ -1,0 +1,115 @@
+/* Custome properties */
+:root {
+  --bg-body: hsl(0, 0%, 8%);
+  --bg-contact: hsl(0, 0%, 14%);
+  --clr-accent: rgb(76, 225, 158);
+  --clr-text: hsl(0, 0%, 85%);
+  --clr-heading: hsl(0, 0%, 100%);
+  --clr-invalid: hsl(7, 100%, 68%);
+
+  --fs-h1: 3.5rem;
+  --fs-h2: 3rem;
+  --fs-logo: 2.2rem;
+  --fs-h3: 2.2rem;
+  --fs-h4: 1.6rem;
+  --fs-body: 1.5rem;
+  --fs-link: 1.5rem;
+
+  --fw-500: 500;
+  --fw-700: 700;
+  --ff-main: 'Montserrat', sans-serif;
+
+  --margin-top-bottom: 2rem;
+  --margin-left-right: 3.5rem;
+  --border-bottom-accent: 3px solid var(--clr-accent);
+}
+@media (min-width: 768px) {
+  :root {
+    --fs-h1: 6.5rem;
+    --fs-h2: 4rem;
+    --fs-logo: 3rem;
+    --fs-body: 1.6rem;
+    --margin-left-right: 3.2rem;
+  }
+}
+@media (min-width: 1440px) {
+  :root {
+    --fs-h1: 8rem;
+    --margin-left-right: 16.5rem;
+  }
+}
+/************************************************** */
+/* Global reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+/************************************************** */
+/* General Styling */
+body {
+  background-color: var(--bg-body);
+  color: var(--clr-text);
+  font-size: var(--fs-body);
+  font-family: var(--ff-main);
+  line-height: 1.56;
+  overflow-x: hidden;
+}
+/* body.light-theme {
+  --bg-body: hsl(0, 0%, 100%);
+  --bg-contact: hsl(0, 0%, 100%);
+  --clr-text: hsl(0, 0%, 10%);
+  --clr-heading: hsl(0, 0%, 5%);
+} */
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+a {
+  display: inline-block;
+  color: inherit;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.btn,
+.btn a:link,
+.btn a:visited {
+  display: inline-flex;
+  align-self: center;
+  padding: 1rem 0;
+  text-transform: uppercase;
+  font-weight: var(--fw-700);
+  letter-spacing: 1px;
+  border-bottom: var(--border-bottom-accent);
+  cursor: pointer;
+  color: var(--clr-heading);
+  letter-spacing: 1.5px;
+}
+.btn:focus {
+  outline: 2px solid rgb(76, 225, 158);
+}
+.btn:hover,
+.btn:active {
+  color: var(--clr-accent);
+}
