@@ -32,9 +32,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshots/desktop.png)
-![](./screenshots/tablet.png)
-![](./screenshots/mobile.png)
+![](./screenshots/desktop-1.png)
+![](./screenshots/desktop-2.png)
+![](./screenshots/tablet-1.png)
+![](./screenshots/tablet-2.png)
+![](./screenshots/mobile-1.png)
+![](./screenshots/mobile-2.png)
+![](./screenshots/mobile-3.png)
 
 ## My process
 

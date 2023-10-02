@@ -41,8 +41,8 @@
 .hero__left .rings {
   position: absolute;
   width: 500px;
-  top: 20%;
-  left: -25%;
+  top: 40%;
+  left: -40%;
   z-index: 1000;
 }
 .heroImage__box {
