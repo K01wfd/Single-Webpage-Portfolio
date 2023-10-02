@@ -2,7 +2,6 @@ const contactForm = document.getElementById('contactForm');
 const senderName = document.getElementById('senderName');
 const senderEmail = document.getElementById('senderEmail');
 const senderMessage = document.getElementById('senderMessage');
-const lightThemeButton = document.getElementById('light');
 const projectImage = document.querySelectorAll('.project__image');
 const projectLinks = document.querySelectorAll('.project__links');
 const formBtn = document.querySelector('.btn-form');
@@ -44,15 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    const senderObj = {
+      name: new String(senderName.value).trim(),
+      email: senderEmail.value,
+      message: senderMessage.value.toString().trim(),
+    };
     if (readyName && readyEmail && readyMessage) {
-      console.log(
-        senderName.value + ' ' + senderEmail.value + ' ' + senderMessage.value
-      );
+      console.log(senderObj);
     }
   });
   formBtn.addEventListener('click', (e) => {});
 });
-
+String;
 function validateInputs(fieldValue, element) {
   let isReady = false;
   if (fieldValue === '') {
@@ -96,6 +98,6 @@ const isValidEmail = (email) => {
   return re.test(String(email).toLowerCase());
 };
 const isWhiteSpace = (s) => {
-  const re = /^\s+$/;
+  const re = /\s{2,}/g;
   return re.test(String(s));
 };
